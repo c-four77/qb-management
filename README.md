@@ -1,12 +1,11 @@
 # qb-management
 
-New qb-bossmenu / qb-gangmenu converted into one resource using qb-menu and qb-input, with SQL support for society funds!
+New qb-bossmenu / qb-gangmenu converted into one resource using ox_lib, with SQL support for society funds!
 
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
 - [qb-smallresources](https://github.com/qbcore-framework/qb-smallresources) (For the Logs)
-- [qb-input](https://github.com/qbcore-framework/qb-input)
-- [qb-menu](https://github.com/qbcore-framework/qb-menu)
+- [ox_lib](https://github.com/overextended/ox_lib/releases)
 - [qb-inventory](https://github.com/qbcore-framework/qb-inventory)
 - [qb-clothing](https://github.com/qbcore-framework/qb-clothing)
 
