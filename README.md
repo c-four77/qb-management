@@ -43,3 +43,33 @@ New qb-bossmenu / qb-gangmenu converted into one resource using qb-menu and qb-i
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>
+
+
+
+# if using **illenium-appearance** 
+
+- head to illenium-appearance/client/management/qbx.lua replace with the one below
+
+```lua
+
+if not Config.BossManagedOutfits then return end
+
+if not Management.IsQB() then return end
+
+function Management.AddItems()
+    local menuItem = {
+        title = _L("outfitManagement.title"),
+        icon = "fa-solid fa-shirt",
+        event = "illenium-appearance:client:OutfitManagementMenu",
+        args = {}
+    }
+    menuItem.description = _L("outfitManagement.jobText")
+    menuItem.args.type = "Job"
+    Management.ItemIDs.Boss = exports[Management.ResourceName]:AddBossMenuItem(menuItem)
+
+    menuItem.description = _L("outfitManagement.gangText")
+    menuItem.args.type = "Gang"
+    Management.ItemIDs.Gang = exports[Management.ResourceName]:AddGangMenuItem(menuItem)
+end
+
+```
