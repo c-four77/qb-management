@@ -48,7 +48,7 @@ New qb-bossmenu / qb-gangmenu converted into one resource using qb-menu and qb-i
 
 # if using **illenium-appearance** 
 
-- head to illenium-appearance/client/management/qbx.lua replace with the one below
+- head to illenium-appearance/client/management/qb.lua replace with the one below
 
 ```lua
 
