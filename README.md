@@ -10,9 +10,33 @@ New qb-bossmenu / qb-gangmenu converted into one resource using qb-menu and qb-i
 - [qb-inventory](https://github.com/qbcore-framework/qb-inventory)
 - [qb-clothing](https://github.com/qbcore-framework/qb-clothing)
 
-## Screenshots
-![image](https://i.imgur.com/9yiQZDX.png)
-![image](https://i.imgur.com/MRMWeqX.png)
+# if using **illenium-appearance** 
+
+- head to illenium-appearance/client/management/qb.lua replace with the one below
+
+```lua
+
+if not Config.BossManagedOutfits then return end
+
+if not Management.IsQB() then return end
+
+function Management.AddItems()
+    local menuItem = {
+        title = _L("outfitManagement.title"),
+        icon = "fa-solid fa-shirt",
+        event = "illenium-appearance:client:OutfitManagementMenu",
+        args = {}
+    }
+    menuItem.description = _L("outfitManagement.jobText")
+    menuItem.args.type = "Job"
+    Management.ItemIDs.Boss = exports[Management.ResourceName]:AddBossMenuItem(menuItem)
+
+    menuItem.description = _L("outfitManagement.gangText")
+    menuItem.args.type = "Gang"
+    Management.ItemIDs.Gang = exports[Management.ResourceName]:AddGangMenuItem(menuItem)
+end
+
+```
 
 ## Installation
 ### Manual
@@ -44,32 +68,3 @@ New qb-bossmenu / qb-gangmenu converted into one resource using qb-menu and qb-i
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>
 
-
-
-# if using **illenium-appearance** 
-
-- head to illenium-appearance/client/management/qb.lua replace with the one below
-
-```lua
-
-if not Config.BossManagedOutfits then return end
-
-if not Management.IsQB() then return end
-
-function Management.AddItems()
-    local menuItem = {
-        title = _L("outfitManagement.title"),
-        icon = "fa-solid fa-shirt",
-        event = "illenium-appearance:client:OutfitManagementMenu",
-        args = {}
-    }
-    menuItem.description = _L("outfitManagement.jobText")
-    menuItem.args.type = "Job"
-    Management.ItemIDs.Boss = exports[Management.ResourceName]:AddBossMenuItem(menuItem)
-
-    menuItem.description = _L("outfitManagement.gangText")
-    menuItem.args.type = "Gang"
-    Management.ItemIDs.Gang = exports[Management.ResourceName]:AddGangMenuItem(menuItem)
-end
-
-```
