@@ -113,7 +113,7 @@ RegisterNetEvent('qb-gangmenu:client:ManageGang', function()
 
         lib.registerContext({
             id = 'gang_members_menu',
-            menu = 'open_menu',
+            menu = 'gangs_first_menu',
             title = Lang:t('bodygang.mempl') .. string.upper(PlayerGang.label),
             options = gangMembersMenu
         })
@@ -149,7 +149,7 @@ RegisterNetEvent('qb-gangmenu:lient:ManageMember', function(data)
 
     lib.registerContext({
         id = 'member_menu',
-        menu = 'open_menu',
+        menu = 'gangs_first_menu',
         title = Lang:t('bodygang.mngpl') .. data.player.name .. ' - ' .. string.upper(PlayerGang.label),
         options = memberMenu
     })
@@ -176,7 +176,7 @@ RegisterNetEvent('qb-gangmenu:client:HireMembers', function()
 
         lib.registerContext({
             id = 'hire_member_menu',
-            menu = 'open_menu',
+            menu = 'gangs_first_menu',
             title = Lang:t('bodygang.hireemp') .. string.upper(PlayerGang.label),
             options = hireMembersMenu
         })
